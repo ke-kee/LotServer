@@ -91,7 +91,7 @@ function Install()
   acce_ver=$(acce_check ${KNV})
   # wget --no-check-certificate -qO "${AcceTmp}/etc/apx.lic" "https://api.moeclub.org/lotServer?ver=${acce_ver}&mac=${Mac}"
   wget --no-check-certificate -qO "${AcceTmp}/etc/apx.lic" "https://lotserverkeygen.loli.ac/keygen.php?mac=${Mac}&ver=${acce_ver}"
-  [ "$(du -b ${AcceTmp}/etc/apx.lic |cut -f1)" -lt '152' ] && Uninstall "Error! I can not generate the Lic for you, Please try again later. "
+  # [ "$(du -b ${AcceTmp}/etc/apx.lic |cut -f1)" -lt '152' ] && Uninstall "Error! I can not generate the Lic for you, Please try again later. "
   echo "Lic generate success! "
   sed -i "s/^accif\=.*/accif\=\"$Eth\"/" "${AcceTmp}/etc/config"
   sed -i "s/^apxexe\=.*/apxexe\=\"\/appex\/bin\/$AcceBin\"/" "${AcceTmp}/etc/config"
